@@ -1,5 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <defs><linearGradient id="g" x1="7" y1="7" x2="41" y2="41" gradientUnits="userSpaceOnUse"><stop stop-color="#4e7cff"/><stop offset=".55" stop-color="#8c6bff"/><stop offset="1" stop-color="#2ed9e6"/></linearGradient></defs>
-  <path d="M7 25 22 8a4 4 0 0 1 6 0l13 14a4 4 0 0 1 0 6L26 41a4 4 0 0 1-6 0L7 31a4 4 0 0 1 0-6Z" fill="url(#g)"/>
-  <circle cx="17" cy="30" r="2.5" fill="#fff"/><circle cx="32" cy="18" r="2.5" fill="#fff"/><path d="m19 28 11-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">DreamSoft DS monogram</title>
+  <defs>
+    <linearGradient id="frame" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4e7cff"/>
+      <stop offset=".55" stop-color="#8c6bff"/>
+      <stop offset="1" stop-color="#2ed9e6"/>
+    </linearGradient>
+    <linearGradient id="letter" x1="14" y1="13" x2="50" y2="51" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7699ff"/>
+      <stop offset="1" stop-color="#36d4e3"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="58" height="58" rx="16" fill="#0b1423" stroke="url(#frame)" stroke-width="2"/>
+  <path d="M16 15h14c12.5 0 21 6.5 21 17s-8.5 17-21 17H16V15Zm9 8v18h5c7.4 0 12-3.2 12-9s-4.6-9-12-9h-5Z" fill="url(#letter)" fill-rule="evenodd"/>
+  <path d="M38.5 23.5c-2.4-2-8.8-2.3-8.8 1.6 0 4.2 10.8 2.4 10.8 8.9 0 5.8-7.5 7.9-12.2 4.3" fill="none" stroke="#f4f7ff" stroke-width="3.4" stroke-linecap="round"/>
 </svg>

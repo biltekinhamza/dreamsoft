@@ -68,12 +68,9 @@ button { color: inherit; }
 .nav-wrap { display: flex; min-height: var(--header); align-items: center; gap: 25px; }
 .brand { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 10px; color: #f7f9ff; font-size: 1.25rem; font-weight: 800; letter-spacing: -.04em; }
 .brand > span:last-child > span { color: #7293ff; }
-.brand-mark { position: relative; display: inline-flex; width: 32px; height: 32px; align-items: center; justify-content: center; transform: rotate(-8deg); }
-.brand-mark::before { content: ""; position: absolute; inset: 3px; background: var(--gradient); border-radius: 8px; box-shadow: 0 0 22px rgba(81, 123, 255, .4); transform: rotate(45deg); }
-.brand-mark i { position: absolute; z-index: 1; width: 3px; height: 3px; background: #fff; border-radius: 50%; }
-.brand-mark i:first-child { transform: translate(-6px, 4px); }
-.brand-mark i:nth-child(2) { width: 12px; height: 2px; border-radius: 3px; transform: rotate(-45deg); }
-.brand-mark i:nth-child(3) { transform: translate(6px, -4px); }
+.brand-mark { position: relative; display: inline-flex; flex: 0 0 auto; width: 34px; height: 34px; background: url("../assets/logo/logo-mark.svg") center / contain no-repeat; filter: drop-shadow(0 7px 15px rgba(78,124,255,.22)); }
+.brand-mark i { display: none; }
+.orbit-core .brand-mark { width: 44px; height: 44px; filter: drop-shadow(0 10px 22px rgba(78,124,255,.3)); }
 .primary-nav { display: flex; flex: 1; align-items: center; justify-content: center; gap: clamp(12px, 1.45vw, 24px); }
 .primary-nav a { position: relative; padding: 29px 0 25px; color: #aeb8cb; font-size: clamp(.73rem, .85vw, .84rem); font-weight: 600; white-space: nowrap; transition: color .2s; }
 .primary-nav a::after { content: ""; position: absolute; right: 0; bottom: 18px; left: 0; height: 2px; background: var(--gradient); border-radius: 4px; transform: scaleX(0); transition: transform .25s; }
