@@ -37,15 +37,7 @@
       "automation.kicker": c.automation.eyebrow, "automation.title": c.automation.title, "automation.intro": c.automation.lead,
       "automation.opportunities": tr ? "Otomasyon Fırsatları" : "Automation Opportunities", "automation.diagram": tr ? "ETKİLEŞİMLİ İŞ AKIŞI" : "INTERACTIVE WORKFLOW",
       "automation.ready": tr ? "Sistem Hazır" : "System Ready", "automation.log": tr ? "Akışı görmek için bir adıma tıklayın." : "Select a step to inspect the flow.",
-      "industries.kicker": c.industries.eyebrow, "industries.title": c.industries.title, "industries.intro": c.industries.lead,
-      "product.kicker": tr ? "DREAMSOFT ÜRÜNÜ" : "A DREAMSOFT PRODUCT",
-      "product.lead": tr ? "Havalandırma üreticileri için ölçülendirmeden maliyet hesabına, mobil siparişten teklife kadar tüm akışı tek merkezde yönetin." : "Manage the complete workflow for ventilation manufacturers, from dimensions and costing to mobile orders and quotations.",
-      "product.feature1Title": tr ? "Akıllı parça hesaplama" : "Smart part calculation", "product.feature1Text": tr ? "Kare ve yuvarlak parçalar için ölçü, sac ve maliyet hesapları." : "Dimension, sheet metal, and cost calculations for rectangular and round parts.",
-      "product.feature2Title": tr ? "Mobil ve çevrimdışı sipariş" : "Mobile, offline ordering", "product.feature2Text": tr ? "Sahada bağlantı olmasa da sepet oluşturun, bağlantı gelince eşitleyin." : "Build a cart in the field without connectivity and sync when the network returns.",
-      "product.feature3Title": tr ? "Teklif ve müşteri takibi" : "Quotation and customer tracking", "product.feature3Text": tr ? "Müşteri taleplerini, ölçüleri ve teklif durumlarını yönetim panelinde izleyin." : "Track customer requests, dimensions, and quotation status in one administration panel.",
-      "product.demo": tr ? "Canlı Demoyu Aç" : "Open Live Demo", "product.android": tr ? "Android Uygulamasını İndir" : "Download Android App", "product.note": tr ? "Web yönetim paneli · Android offline client · Güvenli API" : "Web administration · Offline Android client · Secure API",
-      "product.visualLabel": tr ? "HVAC Pro Suite ürün ekranı" : "HVAC Pro Suite product interface", "product.metric1": tr ? "AKTİF TEKLİF" : "ACTIVE QUOTES", "product.metric2": tr ? "BEKLEYEN SEPET" : "PENDING CARTS", "product.metric3": tr ? "PARÇA KATALOĞU" : "PART CATALOG",
-      "product.panelLabel": tr ? "SİPARİŞ AKIŞI" : "ORDER FLOW", "product.panelTitle": tr ? "Ölçüden teklife tek sistem" : "One system from dimensions to quote", "product.phoneTitle": tr ? "Parça Seçimi" : "Part Selection", "product.phoneButton": tr ? "Sepete Ekle" : "Add to Cart",
+"industries.kicker": c.industries.eyebrow, "industries.title": c.industries.title, "industries.intro": c.industries.lead,
       "projects.kicker": c.projects.eyebrow, "projects.title": c.projects.title, "projects.intro": c.projects.lead, "projects.tabLabel": tr ? "Proje konseptleri" : "Project concepts",
       "process.kicker": c.process.eyebrow, "process.title": c.process.title,
       "technologies.kicker": c.tech.eyebrow, "technologies.title": c.tech.title, "technologies.intro": c.tech.lead,
@@ -114,7 +106,14 @@
     selectedProject = index;
     const c = catalog[language].projects;
     const project = c.items[index];
-    $("#project-detail").innerHTML = `<div class="project-visual"><span class="concept-label">${esc(c.label)}</span><div class="project-screen" aria-hidden="true"><div class="screen-side"><i></i><i></i><i></i></div><div class="screen-main"><div class="screen-bars"><i></i><i></i><i></i></div><div class="screen-chart"><span style="height:42%"></span><span style="height:68%"></span><span style="height:55%"></span><span style="height:88%"></span><span style="height:72%"></span></div></div></div><h3>${esc(project.title)}</h3></div><div class="project-info"><div><small>${esc(c.problem)}</small><p>${esc(project.problem)}</p></div><div><small>${esc(c.solution)}</small><p>${esc(project.solution)}</p></div><div class="project-columns"><section><small>${esc(c.modules)}</small><ul>${project.modules.map((item) => `<li>${esc(item)}</li>`).join("")}</ul></section><section><small>${esc(c.technologies)}</small><div class="tag-list">${project.technologies.split(", ").map((item) => `<span>${esc(item)}</span>`).join("")}</div></section></div><div class="benefit"><span aria-hidden="true">↗</span><div><small>${esc(c.benefit)}</small><p>${esc(project.benefit)}</p></div></div></div>`;
+    const label = esc(project.real ? c.realLabel : c.label);
+    function visual() {
+      if (project.real && Array.isArray(project.images) && project.images.length) {
+        return `<div class="project-screen real"><img src="${project.images[0]}" alt="${esc(project.title)}" loading="lazy"></div><div class="project-shots">${project.images.map((src) => `<img src="${src}" alt="${esc(project.title)}" loading="lazy" width="80" height="50">`).join("")}</div>`;
+      }
+      return `<div class="project-screen" aria-hidden="true"><div class="screen-side"><i></i><i></i><i></i></div><div class="screen-main"><div class="screen-bars"><i></i><i></i><i></i></div><div class="screen-chart"><span style="height:42%"></span><span style="height:68%"></span><span style="height:55%"></span><span style="height:88%"></span><span style="height:72%"></span></div></div></div>`;
+    }
+    $("#project-detail").innerHTML = `<div class="project-visual${project.real ? " visual-real" : ""}">${label}<h3>${esc(project.title)}</h3>${project.description ? `<p class="project-description">${esc(project.description)}</p>` : ""}${visual()}</div><div class="project-info"><div><small>${esc(c.problem)}</small><p>${esc(project.problem)}</p></div><div><small>${esc(c.solution)}</small><p>${esc(project.solution)}</p></div><div class="project-columns"><section><small>${esc(c.modules)}</small><ul>${project.modules.map((item) => `<li>${esc(item)}</li>`).join("")}</ul></section><section><small>${esc(c.technologies)}</small><div class="tag-list">${project.technologies.split(", ").map((item) => `<span>${esc(item)}</span>`).join("")}</div></section></div><div class="benefit"><span aria-hidden="true">↗</span><div><small>${esc(c.benefit)}</small><p>${esc(project.benefit)}</p></div></div></div>`;
     $$('[data-project]').forEach((button) => button.setAttribute("aria-selected", String(Number(button.dataset.project) === index)));
   }
 
@@ -191,6 +190,7 @@
     document.addEventListener("click", (event) => {
       const service = event.target.closest("[data-service]"); if (service) openService(Number(service.dataset.service));
       const project = event.target.closest("[data-project]"); if (project) renderProject(Number(project.dataset.project));
+      const shot = event.target.closest(".project-shots img"); if (shot) { const main = $("#project-detail .project-screen.real img"); if (main) { main.src = shot.src; $$(".project-shots img").forEach((img) => img.removeAttribute("data-active")); shot.setAttribute("data-active", ""); } }
       const flow = event.target.closest("[data-flow]"); if (flow) { $$('[data-flow]').forEach((button) => button.classList.remove("active")); flow.classList.add("active"); $("#workflow-log").textContent = `${t("automation.steps")[Number(flow.dataset.flow)]}: ${language === "tr" ? "adım başarıyla doğrulandı." : "step verified successfully."}`; }
       const faq = event.target.closest(".faq-item button"); if (faq) { const expanded = faq.getAttribute("aria-expanded") === "true"; $$(".faq-item button").forEach((button) => { button.setAttribute("aria-expanded", "false"); $(`#${button.getAttribute("aria-controls")}`).hidden = true; }); faq.setAttribute("aria-expanded", String(!expanded)); $(`#${faq.getAttribute("aria-controls")}`).hidden = expanded; }
       const dialog = event.target.closest("[data-dialog]"); if (dialog) openLegal(dialog.dataset.dialog);
