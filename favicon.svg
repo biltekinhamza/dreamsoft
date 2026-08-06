@@ -1,9 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DreamSoft">
   <defs>
-    <linearGradient id="f" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse"><stop stop-color="#4e7cff"/><stop offset=".55" stop-color="#8c6bff"/><stop offset="1" stop-color="#2ed9e6"/></linearGradient>
-    <linearGradient id="l" x1="14" y1="13" x2="50" y2="51" gradientUnits="userSpaceOnUse"><stop stop-color="#7699ff"/><stop offset="1" stop-color="#36d4e3"/></linearGradient>
+    <linearGradient id="moon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+    <clipPath id="mask"><circle cx="32" cy="32" r="28"/></clipPath>
   </defs>
-  <rect x="2" y="2" width="60" height="60" rx="16" fill="#0b1423" stroke="url(#f)" stroke-width="2"/>
-  <path d="M15 14h15c13 0 22 7 22 18s-9 18-22 18H15V14Zm9 8v20h6c8 0 13-3.5 13-10s-5-10-13-10h-6Z" fill="url(#l)" fill-rule="evenodd"/>
-  <path d="M39 23c-2.5-2-9-2.3-9 1.7 0 4.2 11 2.4 11 9 0 6-7.7 8-12.5 4.4" fill="none" stroke="#f4f7ff" stroke-width="3.5" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="15" fill="#0a111f"/>
+  <circle cx="32" cy="32" r="28" fill="url(#moon)"/>
+  <circle cx="43" cy="26" r="23.7" fill="#0a111f" clip-path="url(#mask)"/>
+  <g fill="none" stroke="#E0E7FF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17.6 21.8 L7.4 32 L17.6 42.2"/>
+    <path d="M46.4 21.8 L56.6 32 L46.4 42.2"/>
+  </g>
+  <circle cx="32" cy="32" r="2.1" fill="#22D3EE"/>
 </svg>
