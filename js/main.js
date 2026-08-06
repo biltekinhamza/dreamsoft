@@ -38,6 +38,14 @@
       "automation.opportunities": tr ? "Otomasyon Fırsatları" : "Automation Opportunities", "automation.diagram": tr ? "ETKİLEŞİMLİ İŞ AKIŞI" : "INTERACTIVE WORKFLOW",
       "automation.ready": tr ? "Sistem Hazır" : "System Ready", "automation.log": tr ? "Akışı görmek için bir adıma tıklayın." : "Select a step to inspect the flow.",
       "industries.kicker": c.industries.eyebrow, "industries.title": c.industries.title, "industries.intro": c.industries.lead,
+      "product.kicker": tr ? "DREAMSOFT ÜRÜNÜ" : "A DREAMSOFT PRODUCT",
+      "product.lead": tr ? "Havalandırma üreticileri için ölçülendirmeden maliyet hesabına, mobil siparişten teklife kadar tüm akışı tek merkezde yönetin." : "Manage the complete workflow for ventilation manufacturers, from dimensions and costing to mobile orders and quotations.",
+      "product.feature1Title": tr ? "Akıllı parça hesaplama" : "Smart part calculation", "product.feature1Text": tr ? "Kare ve yuvarlak parçalar için ölçü, sac ve maliyet hesapları." : "Dimension, sheet metal, and cost calculations for rectangular and round parts.",
+      "product.feature2Title": tr ? "Mobil ve çevrimdışı sipariş" : "Mobile, offline ordering", "product.feature2Text": tr ? "Sahada bağlantı olmasa da sepet oluşturun, bağlantı gelince eşitleyin." : "Build a cart in the field without connectivity and sync when the network returns.",
+      "product.feature3Title": tr ? "Teklif ve müşteri takibi" : "Quotation and customer tracking", "product.feature3Text": tr ? "Müşteri taleplerini, ölçüleri ve teklif durumlarını yönetim panelinde izleyin." : "Track customer requests, dimensions, and quotation status in one administration panel.",
+      "product.demo": tr ? "Canlı Demoyu Aç" : "Open Live Demo", "product.android": tr ? "Android Uygulamasını İndir" : "Download Android App", "product.note": tr ? "Web yönetim paneli · Android offline client · Güvenli API" : "Web administration · Offline Android client · Secure API",
+      "product.visualLabel": tr ? "HVAC Pro Suite ürün ekranı" : "HVAC Pro Suite product interface", "product.metric1": tr ? "AKTİF TEKLİF" : "ACTIVE QUOTES", "product.metric2": tr ? "BEKLEYEN SEPET" : "PENDING CARTS", "product.metric3": tr ? "PARÇA KATALOĞU" : "PART CATALOG",
+      "product.panelLabel": tr ? "SİPARİŞ AKIŞI" : "ORDER FLOW", "product.panelTitle": tr ? "Ölçüden teklife tek sistem" : "One system from dimensions to quote", "product.phoneTitle": tr ? "Parça Seçimi" : "Part Selection", "product.phoneButton": tr ? "Sepete Ekle" : "Add to Cart",
       "projects.kicker": c.projects.eyebrow, "projects.title": c.projects.title, "projects.intro": c.projects.lead, "projects.tabLabel": tr ? "Proje konseptleri" : "Project concepts",
       "process.kicker": c.process.eyebrow, "process.title": c.process.title,
       "technologies.kicker": c.tech.eyebrow, "technologies.title": c.tech.title, "technologies.intro": c.tech.lead,
@@ -59,6 +67,7 @@
       "footer.custom": c.footer.custom, "footer.automation": c.footer.automation, "footer.integration": c.footer.integrations, "footer.support": c.footer.support,
       "footer.rights": c.footer.rights, "footer.privacy": c.footer.privacy, "footer.cookies": c.footer.cookies, "footer.terms": c.footer.terms,
       "cookie.title": c.cookie.title, "cookie.text": c.cookie.text, "cookie.details": tr ? "Detaylar" : "Details", "cookie.accept": c.cookie.accept,
+      "nav.product": tr ? "HVAC Pro" : "HVAC Pro",
       ...Object.fromEntries(Object.entries(c.nav).map(([key, value]) => [`nav.${key}`, value]))
     };
   }
